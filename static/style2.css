@@ -1,0 +1,55 @@
+body {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Text color */
+    margin-bottom: 70px; /* Add margin to accommodate the footer */
+}
+/* Style the footer */
+footer {
+    background-color: #222; /* Dark footer background color */
+    color: #fff; /* Footer text color */
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+.button {
+    position: fixed;
+    bottom: 55px; /* Adjust the distance from the bottom as needed */
+    right: 200px; /* Adjust the distance from the right as needed */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkslategray;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color:darkslateblue;
+}
+
+.fa-trash {
+    color: white;
+    background-color: transparent;
+}
+
+.button1 {
+    position: fixed;
+    bottom: 105px; /* Adjust the distance from the bottom as needed */
+    right: 200px; /* Adjust the distance from the right as needed */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkslategray;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color:darkslateblue;
+}

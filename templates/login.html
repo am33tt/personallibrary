@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <title>Login Page</title>
+    <style>
+        .form-control::placeholder {
+            color: #fff;
+        }
+    </style>
+    
+</head>
+<body class="bg-dark text-light"> <!-- Apply dark mode background and text color to the body -->
+    <div class="col intro">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="alert alert-{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+                {% endif %}
+        {% endwith %}
+        <h1>Welcome to L1</h1>
+        <p>Your personal library.</p>
+    </div>
+    <form method="post" novalidate>
+    <div class="col login-container">
+        {% from 'bootstrap5/form.html' import render_form %}
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username(class="form-control bg-dark text-light", placeholder="Username") }} <!-- Apply dark mode styles to form elements -->
+            {% if form.errors.username %}
+                <div class="alert alert-danger">{{ form.errors.username[0] }}</div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.password(class="form-control bg-dark text-light", placeholder="Password") }} <!-- Apply dark mode styles to form elements -->
+            {% if form.errors.password %}
+                <div class="alert alert-danger">{{ form.errors.password[0] }}</div>
+            {% endif %}
+        </div>
+        <br>
+        {{ form.csrf_token }} 
+        {{ form.submit(class="btn btn-dark") }} 
+    </form>
+
+    <p>Don't have an account? <a href="{{url_for('signup')}}" class="text-dark">Sign Up</a></p> <!-- Apply dark mode text color to the link -->
+    </div>
+</body>
+</html>
